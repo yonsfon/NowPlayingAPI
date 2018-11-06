@@ -34,6 +34,8 @@ namespace NowPlaying
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseDefaultFiles();
+                app.UseStaticFiles();
             }
             else
             {
@@ -42,6 +44,14 @@ namespace NowPlaying
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            // app.UseMvc(routes =>
+            // {
+            //     routes.MapRoute(
+            //         name: "DefaultApi", 
+            //         routeTemplate: "api/{controller}/{id}",
+            //         defaults: new { id = RouteParameter.Optional });
+
+            // });
         }
     }
 }

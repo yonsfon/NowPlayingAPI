@@ -6,19 +6,16 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace NowPlaying.Controllers
 {
-    [Route("api/nowplaying")]
-    [ApiController]
+    [Route("api/[controller]")]
+    // [ApiController]
     public class NowPlayingController : ControllerBase
     {
-        // GET api/NowPlaying
+        // GET api/nowPlaying
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-
             string nowPlayingSTR = WinampFrontEndLib.WinampLib.GetCurrentSongTitle();
-
             return new string[] { nowPlayingSTR };
-
         }
     }
 }
